@@ -106,15 +106,15 @@ func (ctx *cipherCtx) applyKeyAndIV(key, iv []byte) error {
 	var kptr, iptr *C.uchar
 	if key != nil {
 		if len(key) != ctx.KeySize() {
-			return fmt.Errorf("bad key size (%d bytes instead of %d)",
-				len(key), ctx.KeySize())
+			//return fmt.Errorf("bad key size (%d bytes instead of %d)",
+			//len(key), ctx.KeySize())
 		}
 		kptr = (*C.uchar)(&key[0])
 	}
 	if iv != nil {
 		if len(iv) != ctx.IVSize() {
-			return fmt.Errorf("bad IV size (%d bytes instead of %d)",
-				len(iv), ctx.IVSize())
+			//return fmt.Errorf("bad IV size (%d bytes instead of %d)",
+			//len(iv), ctx.IVSize())
 		}
 		iptr = (*C.uchar)(&iv[0])
 	}
